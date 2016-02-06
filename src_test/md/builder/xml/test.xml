@@ -1,0 +1,55 @@
+<objects>
+    <object class="java.lang.String">
+        <construct as="$StringValue">
+            <arg>A String Value</arg>
+        </construct>
+    </object>
+
+    <object class="md.builder.xml.AObject">
+        <construct as="$a_object">
+            <arg>$StringValue</arg>
+            <arg>Second Arg</arg>
+        </construct>
+    </object>
+
+    <object class="md.builder.xml.AObjectWithSetters">
+        <construct as="$another_object"/>
+
+        <set value="$StringValue" into="publicField"/>
+
+        <call method="setValue">
+            <arg>Value</arg>
+        </call>
+
+        <call method="setAnotherValue">
+            <arg>Another Value</arg>
+        </call>
+    </object>
+
+    <object class="md.builder.xml.AStaticProperties">
+        <set value="$StringValue" into="TO_SET_STRING"/>
+        <set value="A" into="TO_SET_CHARACTER"/>
+        <set value="B" into="TO_SET_CHARACTER_P"/>
+        <set value="1" into="TO_SET_BYTE"/>
+        <set value="2" into="TO_SET_BYTE_P"/>
+        <set value="3" into="TO_SET_SHORT"/>
+        <set value="4" into="TO_SET_SHORT_P"/>
+        <set value="5" into="TO_SET_INTEGER"/>
+        <set value="6" into="TO_SET_INTEGER_P"/>
+        <set value="7" into="TO_SET_LONG"/>
+        <set value="8" into="TO_SET_LONG_P"/>
+        <set value="8.1" into="TO_SET_FLOAT"/>
+        <set value="8.2" into="TO_SET_FLOAT_P"/>
+        <set value="8.3" into="TO_SET_DOUBLE"/>
+        <set value="8.4" into="TO_SET_DOUBLE_P"/>
+    </object>
+
+    <object class="md.builder.xml.BStaticProperties">
+        <set value="$a_object" into="A_OBJECT"/>
+        <set value="$another_object" into="A_OBJECT_WITH_SETTERS"/>
+
+        <call method="setPrivateValue">
+            <arg>$StringValue</arg>
+        </call>
+    </object>
+</objects>
